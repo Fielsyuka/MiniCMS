@@ -1,0 +1,467 @@
+@charset "UTF-8";
+/******************************************************************************
+ * Foundation
+*******************************************************************************/
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  font-size: medium;
+}
+
+body {
+	text-rendering: optimizelegibility;
+	background-color: #FFFDF7;
+  font-feature-settings: "pkna";
+  min-height: 100%;
+	padding: 40px;
+	color: #646464;
+  font: 1em / 1.5 "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO", sans-serif;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+input[type="text"],
+select,
+textarea {
+	padding: .5em 1em;
+	background-color: #fefefe;
+	border: 1px solid #d1d1d1;
+	color: inherit;
+	font-size: 1em;
+}
+
+input[type="text"],
+textarea {
+	width: 100%;
+	min-width: 320px;
+}
+
+/******************************************************************************
+ * Layout
+*******************************************************************************/
+.l-container {
+	width: 92%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.l-container.--lg {
+	max-width: 1280px;
+}
+
+.l-container.--sm {
+	max-width: 800px;
+}
+
+.l-container.--ss {
+	max-width: 640px;
+}
+
+.l-spacerSection {
+	margin-top: 80px;
+}
+
+.l-flex {
+	display: flex;
+}
+
+/******************************************************************************
+ * Component
+*******************************************************************************/
+.c-pageTitle {
+	margin: 1em 0;
+	padding: .2em 0;
+	color: #0A2342;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: .05em;
+}
+
+.c-titleLv2 {
+	margin: 1em 0;
+	border-left: 8px solid;
+	padding-left: 1em;
+	line-height: 1.2;
+}
+
+.c-button {
+	appearance: none;
+	cursor: pointer;
+	text-decoration: none;
+	background-color: inherit;
+	border: none;
+	box-shadow: none;
+	color: inherit;
+}
+
+.c-buttonBack {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.c-buttonBack::before {
+	content: "\02190";
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	margin-right: 1em;
+	border: 1px solid currentColor;
+	border-radius: 50%;
+	color: inherit;
+	font-size: 1em;
+	transform: translateX(0);
+	transition: transform .2s;
+}
+
+.c-buttonBack:hover::before {
+	transform: translateX(-4px);
+	transition: transform .2s;
+}
+
+.c-buttonPrimary {
+	display: inline-flex;
+	padding: .85em 1.5em;
+	border-radius: 4px;
+	background-color: #64b772;
+	color: #fff;
+	font-size: 1em;
+	letter-spacing: .1em;
+}
+
+.c-linkText {
+	text-decoration: underline;
+	color: #5ba2dc;
+}
+
+/* category */
+.c-categoryLabel {
+	display: inline-block;
+	text-decoration: none;
+	padding: .05em 1em;
+	border-radius: 24px;
+	background-color: #e4e4e4;
+	color: currentColor;
+	font-size: .875em;
+	line-height: 1.5;
+}
+
+.c-categoryLabel + .c-categoryLabel {
+	margin-left: 1em;
+}
+
+/* pagination */
+.c-pagination {
+	margin-top: 40px;
+	margin-left: auto;
+	max-width: 320px;
+}
+
+.c-pagination__list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0;
+	padding: 0;
+}
+
+.c-pagination__list a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.c-pagination__list a:hover {
+	text-decoration: underline;
+}
+
+.c-pagination__prev,
+.c-pagination__next {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.c-pagination__prev {
+	margin-right: 40px;
+}
+
+.c-pagination__next {
+	/* float: right; */
+}
+
+.c-pagination__prev::before {
+	content: "\03c";
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.c-pagination__next::after {
+	content: "\03e";
+	display: inline-block;
+	margin-left: 1em;
+}
+
+.c-pagination__next {
+	float: right;
+}
+
+
+/******************************************************************************
+ * Project
+*******************************************************************************/
+.p-archiveList {
+	display: flex;
+	margin: 0;
+	padding: 1em;
+	border-top: 1px dashed #64b772;
+}
+
+.p-archiveList:last-of-type {
+	border-bottom: 1px dashed #64b772;
+}
+
+.p-archiveList__dt {
+	width: 6em;
+	color: inherit;
+	font-size: .85em;
+	line-height: 1.85em;
+}
+
+.p-archiveList__dd {
+	width: calc(100% - 6em);
+	color: inherit;
+	font-size: .85em;
+	line-height: 1.85em;
+}
+
+.p-archiveList__category {
+	margin: 0 1em .5em 0;
+}
+
+.p-archiveList__link {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
+
+.p-archiveList__link:hover {
+	color: #64b772;
+}
+
+.p-categoryList {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	margin: 24px auto;
+	padding: 0;
+}
+
+.p-categoryList__item {
+	margin: 0 1em;
+}
+
+.p-categoryList__item.current {
+	border-bottom: 1px solid;
+}
+
+.p-categoryList__item > a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.p-postArticle {
+	padding: 40px 0 80px;
+}
+
+.p-postTitle {
+	margin: 1em 0 .5em;
+	color: #64b772;
+	font-size: 2em;
+	line-height: 1.2;
+}
+
+.p-postCreated {
+	display: inline-block;
+	margin: 0;
+}
+
+.p-postTime {
+	color: #666;
+	font-size: .85em;
+}
+
+.p-postCategoryList {
+	display: inline-flex;
+	list-style: none;
+	margin: 1em 0 0 .85em;
+	padding: 0;
+}
+
+.p-postImage {
+	display: block;
+	margin: 24px auto 0;
+	border-radius: 24px;
+}
+
+.p-postContent {
+	margin-top: 40px;
+}
+
+/* Admin */
+.p-adminBox {
+	padding: 40px;
+	background-color: #fff;
+	border: 1px solid #d1d1d1;
+	border-radius: 8px;
+}
+
+.p-adminTable {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #fff;
+}
+
+.p-adminTable__head {
+	border-top: 1px solid #d1d1d1;
+	border-bottom: 1px solid #d1d1d1;
+}
+
+.p-adminTable__head th {
+	min-width: 4em;
+	padding: .85em 1em;
+	text-align: center;
+}
+
+.p-adminTable__row {
+	vertical-align: middle;
+}
+
+.p-adminTable__body .p-adminTable__row:nth-of-type(odd) {
+	background-color: #ededed;
+}
+
+.p-adminTable__body td {
+	min-width: 4em;
+	padding: .85em 1em;
+	border-bottom: 1px solid #e6e6e6;
+	text-align: center;
+}
+
+.p-adminTable__body td.title {
+	min-width: 20em;
+	text-align: left;
+}
+
+.p-adminTable__body td.cat_id {
+	width: 8em;
+}
+
+.p-adminTable__body td.id,
+.p-adminTable__body td.cat_id,
+.p-adminTable__body td.created,
+.p-adminTable__body td.modified {
+	font-size: .875em;
+}
+
+.p-adminPostForm {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.p-adminPostForm_dt {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.p-adminPostForm_dd {
+	display: block;
+	margin: .5em 0 0;
+	padding: 0;
+}
+
+.p-adminPostForm_dd + .p-adminPostForm_dt {
+	margin-top: 1.5em;
+}
+
+.p-adminCat {
+	display: flex;
+
+}
+
+.p-adminCat__form {
+	width: 30%;
+}
+
+.p-adminCat__table {
+	width: 70%;
+	margin-left: 54px;
+}
+
+/******************************************************************************
+ * Utility
+*******************************************************************************/
+.u-visuallyHidden {
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
+
+.u-clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.u-textLeft {
+	text-align: left;
+}
+
+.u-textRight {
+	text-align: right;
+}
+
+.u-textCenter {
+	text-align: center;
+}
+
+.mt24 {
+	margin-top: 24px;
+}
+
+.mt32 {
+	margin-top: 32px;
+}
+
+.mt40 {
+	margin-top: 40px;
+}
+
+.mt56 {
+	margin-top: 56px;
+}
+
+.mt64 {
+	margin-top: 64px;
+}
